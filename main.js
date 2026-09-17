@@ -43,6 +43,7 @@
       initSpeed: 'normal',
       direction: 135,
       keep: true,
+        useHTML: true,
     });
   } catch (err) {
     // Something went wrong building the cloud — put the static grid back.
@@ -98,5 +99,12 @@ document.querySelectorAll('#navMenu .nav-link, #navMenu .btn').forEach((link) =>
     { threshold: 0.2, rootMargin: '0px 0px -60px 0px' }
   );
 
-  cards.forEach((card) => observer.observe(card));
+   cards.forEach((card) => observer.observe(card));
+
+  // شبكة أمان: لو أي كارت مطلعش يظهر لأي سبب، نظهره إجباري بعد 3 ثواني
+  setTimeout(() => {
+    cards.forEach((card) => card.classList.add('is-visible'));
+  }, 3000);
 })();
+
+document.documentElement.classList.add('js-ready');
