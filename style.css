@@ -449,6 +449,10 @@ h1, h2, h3, .hero-title, .navbar-brand {
   display: flex;
   flex-direction: column;
   transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.6s ease;
+}
+
+/* الإخفاء والأنيميشن بس لو الـ JS فعلاً اشتغل */
+.js-ready .project-card {
   opacity: 0;
   transform: translateY(18px);
 }
